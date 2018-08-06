@@ -21,18 +21,18 @@ class SignUp extends Component {
         return (
             <form onSubmit={handleSubmit(this.handleSignUp.bind(this))}>
                 <h1 className="text-center">Create Account</h1>
-                <div className="row col-xs-6 col-xs-offset-3">
-                    <Field className="col-6 offset-3" name="username" component={renderInputs} label="Username"/>
+                <div className="row col-xs-10 col-xs-offset-1">
+                    <Field className="col-xs-10 col-xs-offset-1" name="username" component={renderInputs} label="Username"/>
                 </div>
-                <div className="row col-xs-6 col-xs-offset-3">
-                    <Field className="col-6 offset-3" name="email" component={renderInputs} label="Email"/>
+                <div className="row col-xs-10 col-xs-offset-1">
+                    <Field className="col-xs-10 col-xs-offset-1" name="email" component={renderInputs} label="Email"/>
                 </div>
-                <div className="row col-xs-6 col-xs-offset-3">
-                    <Field type="password" className="col-6 offset-3" name="password" component={renderInputs} label="Password"/>
+                <div className="row col-xs-10 col-xs-offset-1">
+                    <Field type="password" className="col-xs-10 col-xs-offset-1" name="password" component={renderInputs} label="Password"/>
                 </div>
-                <div className="row col-xs-6 col-xs-offset-3">
-                    <div className="d-flex col-6 offset-3 justify-content-end">
-                        <button className="btn btn-outline-info btn-sm col-xs-6 col-xs-offset-3">Sign Up</button>
+                <div className="row col-xs-10 col-xs-offset-1">
+                    <div className="d-flex col-xs-10 col-xs-offset-1 justify-content-end">
+                        <button className="btn btn-outline-info btn-sm col-xs-10 col-xs-offset-1">Sign Up</button>
                     </div>
                 </div>
             </form>
@@ -41,16 +41,19 @@ class SignUp extends Component {
 }
 
 function validate(values) {
-    const{username, email, password} = values;
+    const{username, email, password, confirmPassword} = values;
     const errors = {};
 
     if(!username) {
+        errors.username = "Please enter your username";
+    }
+    if(!email) {
         errors.email = "Please enter your email";
     }
-    if (!email) {
+    if (!password) {
         errors.password = "Please enter a password"
     }
-    if (!password) {
+    if (!confirmPassword) {
         errors.confirmPassword = "Passwords do not match"
     }
     return errors;

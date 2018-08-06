@@ -22,7 +22,7 @@ class WizardResults extends Component {
             platform:  platformData.platform,
             price_value: priceData.price
         };
-        this.props.wizardResults(newItem)
+        this.props.wizardResults(newItem);
     }
     render() {
         if (!this.props.wizard){

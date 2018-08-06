@@ -24,13 +24,13 @@ class SignIn extends Component {
 
             <form onSubmit={handleSubmit(this.handleSignIn.bind(this))}>
                 <h1 className="text-center">Sign-In</h1>
-                <div className="row col-xs-6 col-xs-offset-3">
+                <div className="row  col-xs-10 col-xs-offset-1">
                     <Field className="signInInput" name="email" component={renderInputs} label="Email"/>
             </div>
-                <div className="row col-xs-6 col-xs-offset-3">
+                <div className="row col-xs-10 col-xs-offset-1">
                     <Field type="password" className="signInInput" name="password" component={renderInputs} label="Password"/>
                 </div>
-                <div className="row col-xs-6 col-xs-offset-3">
+                <div className="row  col-xs-10 col-xs-offset-1">
                     <div className="signInInput">
                         <button className="btn btn-outline-info btn-sm col-xs-6 col-xs-offset-3">Sign In</button>
                         <p className="text-danger">{authError}</p>

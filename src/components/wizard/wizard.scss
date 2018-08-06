@@ -28,6 +28,7 @@
   width: 100%;
   height: 53vh;
   justify-content: space-evenly;
+  cursor: pointer;
 }
 
 .game_wiz {
@@ -35,6 +36,7 @@
 }
 .lg_icon_wiz {
   height: 15vh;
+  cursor: pointer;
 }
 .icon {
   transition: transform .2s;
