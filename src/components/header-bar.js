@@ -1,7 +1,10 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
+import React, {Component, Fragment} from 'react';
+import {NavLink, Link, withRouter} from 'react-router-dom';
 import '../assets/css/header-bar.scss'
+import {signIn, signOut} from "../actions";
+import { connect } from "react-redux";
+import WelcomeLogo from "../assets/images/wizard-icons/headerlogo.png"
+
 
 class HeaderBar extends Component {
     constructor(props){
@@ -108,6 +111,34 @@ class HeaderBar extends Component {
         }
     }
 
+
+
+    renderLinks() {
+        if(this.props.auth) {
+            return (
+                <Fragment>
+                    <li className="nav-text nav-text-bottom">
+                        <NavLink to ="/favorites">Favorites</NavLink>
+                    </li>
+                    <li className="nav-text nav-text-bottom">
+                        <NavLink onClick={this.props.signOut} to ="sign-in">Sign Out</NavLink>
+                    </li>
+                </Fragment>
+
+            )
+        }
+        return(
+            <Fragment>
+                <li className="nav-text nav-text-bottom">
+                    <NavLink to="/sign-up">Sign Up</NavLink>
+                </li>
+                <li className="nav-item nav-text">
+                    <NavLink className="nav-link" to ="/sign-in">Sign In</NavLink>
+                </li>
+            </Fragment>
+        )
+    }
+
     render() {
         const menuOverlayStyle = {
             background: this.state.dropdownsOpen.main ? "rgba(255,255,255,.5)" : "rgba(0,0,0,0)",
@@ -142,7 +173,7 @@ class HeaderBar extends Component {
         const searchDropDownStyle = {
             height: this.state.dropdownsOpen.search ? "40px" : "0"
         };
-        
+
 
         return(
             <div>
@@ -171,18 +202,12 @@ class HeaderBar extends Component {
                             </ul>
                         </li>
                         <Link to="/wizard"><li className="nav-text">Wizard</li></Link>
-                        <li className="nav-text nav-text-bottom">
-                            <div className="plus-bar" onClick={this.toggleAboutMenu.bind(this)}>
-                                <Link to="/about">About </Link>
-                                <span className={`glyphicon glyphicon-${this.state.dropdownsOpen.about ? "minus" : "plus"}`} alt="list expand icon" aria-expanded={`${this.state.dropdownsOpen.about ? "true" : "false"}`} aria-label="About-Menu expansion"></span>
-                            </div>
-                            <ul className="about-menu" style={aboutMenuStyle}>
-                                <li><a>Contact Us</a></li>
-                            </ul>
-                        </li>
+                        <Link to="/about"><li className="nav-text">About</li></Link>
+                        {this.renderLinks()}
                     </ul>
-                    <h2 className="appName">Games Ferret</h2>
+                    <Link className="logoLink" to="/"><img className="logo" src={WelcomeLogo}/></Link>
                     <div className="fas fa-search search-icon" onClick={this.toggleSearchBar.bind(this)}></div> 
+
                 </nav>
                 <div className="dropdownSearch" style={searchDropDownStyle}>
                     <div>
@@ -195,8 +220,13 @@ class HeaderBar extends Component {
                     </div>
                 </div>
             </div>
-        )  
+        )
+    }
+}
+function mapStateToProps(state) {
+    return {
+        auth: state.user.auth
     }
 }
 
-export default withRouter(HeaderBar);
+export default withRouter (connect(mapStateToProps, {signIn: signIn, signOut: signOut})(HeaderBar));

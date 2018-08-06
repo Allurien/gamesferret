@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 //Main Wrapper and Overall Elements
 body{
     width: 100%;
@@ -9,28 +10,53 @@ button {
     background: transparent;
     border: none;
 }
-.appOuterDiv{
+h1,h2,h3,h4 {
     font-family: 'Ubuntu', sans-serif;
+}
+form {
+    margin-bottom: 1rem;
+}
+.appOuterDiv{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 .mainBody{
     padding-top: 73px;
     color: #1D3557;
     flex: 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 //404 Page
 .notFound{
     text-align: center;
-    margin: 10%;
+    margin: 5%;
 }
 .notFound img {
-    max-width: 70%;
+    max-width: 50%;
 }
 .notFound :any-link {
     color: rgb(8, 103, 136);
   }
+// Loader Component
+.loaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loadingImage {
+    
+}
+//Browse
+.browseMain{
+    // height: 81vh;
+}
+
 //Home Page
 .homePageContainer {
     // height: 78vh;
@@ -44,8 +70,6 @@ button {
     text-align: center;
     margin: auto;
 }
-
-
 
 //Footer
 .footerContainer{
@@ -71,6 +95,28 @@ button {
     justify-content: center;
     margin: 0 0 8px;
   }
+
+//Animation
+.spinner {
+    width: 200px;
+    height: 200px;
+    animation-name: spin;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+ 
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+
 //Media Queries
 @media only screen and (max-width: 360px) {
     .stars>div>span{
@@ -84,7 +130,7 @@ button {
 }
 @media only screen and (min-width: 750px) {
     .stars>div>span{
-        font-size: 40px;
+        font-size: 30px;
     }
     .resItemImg {
         margin-bottom: 5%;
@@ -96,4 +142,29 @@ button {
         width: 50%;
         margin-bottom: 1%;
   }
+    .resItem {
+        width: 21%;
+    }
+    .detailContainer{
+        width: 80%;
+        margin: auto;     
+    }
+    .modal-main {
+        margin-top: 8%;
+        width: 60%;
+        margin-left: 20%;
+      }
+    .carousel-container {
+        width: 400px;
+        height: auto;
+        margin: auto;
+        max-height: 400px;
+    }
+    .indicators{
+        width: 50%;
+        margin-top: 2%;
+    }
+    .notFound img {
+        max-width: 30%;
+    }
 }

@@ -7,7 +7,12 @@
     background: rgba(0, 0, 0, 0.6);
 
   }
-  
+  .screenshot-modal-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
   .modal-main {
     display: flex;
     align-items: center;
@@ -48,6 +53,10 @@
     width: 45%;
     height: 45%;
     margin: 3%;
+  }
+  .screenshotModalImg {
+    max-width: 90%;
+    height: auto;
   }
   .modalRow {
     display: flex;  

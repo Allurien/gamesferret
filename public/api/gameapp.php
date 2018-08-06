@@ -26,6 +26,6 @@ switch($method) {
           $output['error'] ="unknown request method: $method";
 }
 
-$output_json = json_encode($output);
-print($output_json);
+    $output_json = json_encode($output);
+    print($output_json);
 ?>

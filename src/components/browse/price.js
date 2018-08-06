@@ -4,9 +4,7 @@ import Paid from "../../assets/images/wizard-icons/001-money.png";
 import Free from "../../assets/images/wizard-icons/002-free.png";
 import "../wizard/wizard.scss";
 
-
 class PriceOptions extends Component {
-
     render() {
         return(
             <div className="wizardContainer">
@@ -16,7 +14,7 @@ class PriceOptions extends Component {
                         <Link to='/browse/price/free'>
                             <div className="icon" >
                                 <img className="game_wiz" src ={Free} />
-                                <div>Free</div>
+                                <div className="genreTitle">Free</div>
                             </div>
                         </Link>
                         <Link to='/browse/price/paid'>
@@ -29,7 +27,6 @@ class PriceOptions extends Component {
                 </div>
             </div>
         )
-}
-
+    }
 }
 export default PriceOptions;

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './browse.scss';
 import '../../assets/css/header-bar.scss';
 
 export default props => {

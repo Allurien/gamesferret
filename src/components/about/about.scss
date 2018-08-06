@@ -5,6 +5,7 @@
     background: white;
 }
 .devItem{
+    position: relative;
     display: flex;
     width: 90%;
     height: 10%;
@@ -19,9 +20,9 @@
 
 }
 .devItem img {
-    display: inline-flex;
-    max-width: 25%;
-    height: auto;
+    display: inline-block;
+    max-height: 100px;
+    width: auto;
     margin-left: 2%;
     vertical-align: text-top;
 }
@@ -53,6 +54,9 @@
 }
 .devIcons a{
     color: #F0C808;
+}
+.devIcons a:hover{
+    text-shadow: 1px 1px 2px #333;
 }
 .aboutLabel{
     width:80%;

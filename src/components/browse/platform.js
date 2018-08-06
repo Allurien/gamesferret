@@ -4,9 +4,7 @@ import Apple from "../../assets/images/wizard-icons/001-apple.png";
 import Android from "../../assets/images/wizard-icons/002-android.png";
 import "../wizard/wizard.scss";
 
-
 class PriceOptions extends Component {
-
     render() {
         return(
             <div className="wizardContainer">
@@ -29,7 +27,6 @@ class PriceOptions extends Component {
                 </div>
             </div>
         )
-}
-
+    }
 }
 export default PriceOptions;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $request = $_POST['search_term'];
 if(!$request ) {
     $output['errors'][] = 'no search information provided';
@@ -13,7 +14,7 @@ if(empty($output['error'])) {
     `publisher_name`,
     `description`,
     `platform`
-    ) AGAINST('$request')
+    ) AGAINST('*$request*')
     FROM
     `combined_game_content`
     WHERE
@@ -24,7 +25,7 @@ if(empty($output['error'])) {
     `publisher_name`,
     `description`,
     `platform`
-    ) AGAINST('$request')
+    ) AGAINST('*$request*')
     ORDER BY
     MATCH(
     `app_name`,
@@ -33,7 +34,7 @@ if(empty($output['error'])) {
     `publisher_name`,
     `description`,
     `platform`
-    ) AGAINST('$request') DESC
+    ) AGAINST('*$request*') DESC
     LIMIT 27");
 
     $result = mysqli_query($conn, $query);

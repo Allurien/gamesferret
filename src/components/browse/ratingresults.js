@@ -4,36 +4,26 @@ import '../results/results.scss';
 import GeneralText from '../multiuse/generaltext';
 import {connect} from 'react-redux';
 import {browseResults} from '../../actions/';
-import ferret from '../../assets/images/ferretgif.gif';
+import Loader from '../loader';
 
 class RatingResultsList extends Component {
-
     componentDidMount(){
-        this.getDataFromLocalStorage();
+        this.getData();
     }
-    getDataFromLocalStorage() {
-        // var ratingData = JSON.parse(localStorage.getItem('rating'));
-        // console.log("this is the rating data: ", ratingData.rating);
+    getData() {
         const newItem = {
             all_rating: 5,
         };
         this.props.browseResults(newItem)
     }
-    
     render(){
         if (!this.props.browseresult){
             return (
-                <div className="carousel-container">
-                    <div className="loadingImage">
-                        <img src={ferret} alt="Loading Images" />
-                    </div>
-                </div>
+                <Loader />
             )
         }
     const data = this.props.browseresult.data;
-    // const priceType = JSON.parse(localStorage.getItem('rating'));
-    const text = 'Here are some results we think you would like!';
-    console.log('data', data);
+    const text = 'Here are some results we think you will like!';
         return (
             <div className="resContainer">
                 <h2 className="titleLabel">{`5 Star Games`}</h2>

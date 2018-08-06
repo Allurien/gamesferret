@@ -16,11 +16,14 @@ import Wizard from './wizard/price';
 import Platform from "./wizard/platform";
 import Genre from "./wizard/genre";
 import Search from './search';
-import GameInfo from '../components/gamedetails'
+import GameInfo from './gamedetails';
 import About from './about';
 import Footer from './footer-bar';
 import WizardResults from "./wizard/wizardresults"
 import '../assets/css/app.scss';
+import SignIn from "../components/signin/sign_in";
+import SignUp from "../components/signin/sign_up";
+import Favorites from "../components/favorites";
 
 
 const App = () => (
@@ -28,7 +31,6 @@ const App = () => (
             <div>
             <Header/>
             </div>
-
             <div className="mainBody">
                 <Switch>
                     <Route exact path="/" component={Home}/>
@@ -49,6 +51,9 @@ const App = () => (
                     <Route path="/about" component={About}/>
                     <Route path="/search/results" component={Search}/>
                     <Route path='/game/:game_details' component={GameInfo} />
+                    <Route path='/sign-in' component={SignIn}/>
+                    <Route path="/sign-up" component={SignUp}/>
+                    <Route path="/favorites" component={Favorites}/>
                     <Route component={NotFound} />
                 </Switch>
             </div>
@@ -58,5 +63,4 @@ const App = () => (
 
         
 );
-
 export default App;

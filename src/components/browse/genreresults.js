@@ -4,7 +4,7 @@ import '../results/results.scss';
 import GeneralText from '../multiuse/generaltext';
 import {connect} from 'react-redux';
 import {browseResults} from '../../actions/';
-import ferret from '../../assets/images/ferretgif.gif';
+import Loader from '../loader';
 
 class GenreResultsList extends Component {
 
@@ -12,7 +12,6 @@ class GenreResultsList extends Component {
         this.getData();
     }
     getData() {
-        console.log("this is the browse data: ", this.props.match.params.genre);
         const newItem = {
             genre: this.props.match.params.genre,
         };
@@ -22,16 +21,12 @@ class GenreResultsList extends Component {
     render(){
         if (!this.props.browseresult){
             return (
-                <div className="carousel-container">
-                    <div className="loadingImage">
-                        <img src={ferret} alt="Loading Images" />
-                    </div>
-                </div>
+                <Loader />
             )
         }
     const data = this.props.browseresult.data;
     const genreName = this.props.match.params.genre;
-    const text = 'Here are some games we think you would like!';
+    const text = 'Here are some games we think you will like!';
         return (
             <div className="resContainer">
                 <h2 className="titleLabel">{`${genreName} Games`}</h2>

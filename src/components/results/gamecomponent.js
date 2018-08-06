@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import ReactStars from 'react-stars'
-import '../modals/modal.scss'
 import '../gamedetails/gamedetails.scss'
 import Modal from 'react-modal';
-import {Link} from 'react-router-dom';
-
+import {withRouter, Link} from 'react-router-dom';
 
 class GameResult extends Component {
     constructor () {
@@ -12,7 +10,6 @@ class GameResult extends Component {
         this.state = {
             modalIsOpen: false
           };
-        
           this.openModal = this.openModal.bind(this);
           this.closeModal = this.closeModal.bind(this);
     } 
@@ -23,6 +20,8 @@ class GameResult extends Component {
         this.setState({modalIsOpen: false});
       }
     render(){
+        const miniDescription = this.props.details.description.replace(/<\/?[^><]*>|\&\#?\d*\w*\;/gm, " ");
+        
         const ratingChanged = (newRating) => {
         };
         Modal.setAppElement(document.getElementById('root'));
@@ -37,7 +36,6 @@ class GameResult extends Component {
                 zIndex: '5',
             }
         }
-
         return (
             <div className="resItem">
                 <div className='gameBlock' onClick={this.openModal}>
@@ -45,7 +43,6 @@ class GameResult extends Component {
                     <div className="stars">
                         <ReactStars count={5}  color2={'#ffd700'} value={parseFloat(this.props.details.all_rating)} edit={false}/>
                     </div>
-                    
                     <h4>{this.props.details.app_name}</h4>
                 </div>
                 <Modal 
@@ -62,7 +59,7 @@ class GameResult extends Component {
                             <div className="modalRow">
                                 <img className='modalImg' src={this.props.details.icon_url} alt={this.props.details.app_name} />
                                 <div className="infoColumn">
-                                    <p>{ ((this.props.details.description).length > 60) ? (((this.props.details.description).substring(0,60-3)) + '...') : this.props.description }</p>
+                                    <p>{ (miniDescription.length > 60) ? ((miniDescription.substring(0,60-3)) + '...') : miniDescription }</p>
                                     <div className="stars">
                                         <ReactStars count={5} color2={'#ffd700'} value={parseFloat(this.props.details.all_rating)} edit={false}/>
                                     </div>
@@ -70,7 +67,7 @@ class GameResult extends Component {
                                 </div>
                             </div>
                             <div className="modalRow">
-                                <button className='detailsButton'><Link to={`/game/${this.props.details.game_id}/gamedetails`}>View Game Details</Link></button>
+                                <button className='detailsButton' onClick={this.closeModal}><Link to={`/game/${this.props.details.game_id}/gamedetails`}>View Game Details</Link></button>
                                 <button className='detailsButton' onClick={this.closeModal}>Continue Browsing</button>
                             </div>
                         </div>
@@ -80,4 +77,4 @@ class GameResult extends Component {
         )
     }
 } 
-export default GameResult;
+export default withRouter(GameResult);

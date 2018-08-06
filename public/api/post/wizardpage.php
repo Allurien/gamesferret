@@ -1,4 +1,5 @@
 <?php
+session_start();
 $genre = $_POST['genre']; 
 $platform = $_POST['platform'];
 $price_value = $_POST['price_value'];

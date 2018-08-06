@@ -8,7 +8,6 @@ const DEFAULT_STATE = {
 export default (state = DEFAULT_STATE, action) => {
     switch(action.type){
         case types.BROWSE_RESULTS:
-        console.log('browse reducer', action.payload.data)
             return {...state, browseresult: action.payload.data};
         default:
             return state;

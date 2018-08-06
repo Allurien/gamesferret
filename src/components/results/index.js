@@ -1,10 +1,11 @@
+//This file is a basic template for future result pages.
 import React, {Component} from 'react';
 import GameComponent from './gamecomponent';
 import './results.scss';
 import GeneralText from '../multiuse/generaltext';
 import {connect} from 'react-redux';
 import {searchResults} from '../../actions/';
-import ferret from '../../assets/images/ferretgif.gif';
+import Loader from '../loader';
 
 class ResultsList extends Component {
 
@@ -14,17 +15,11 @@ class ResultsList extends Component {
     }
     getResultData(){
         this.props.searchResults(this.props.search);
-       
     }
-
     render(){
         if (!this.props.gamelist){
             return (
-                <div className="carousel-container">
-                    <div className="loadingImage">
-                        <img src={ferret} alt="Loading Images" />
-                    </div>
-                </div>
+                <Loader />
             )
     }
     const data = this.props.gamelist.data;
@@ -35,13 +30,10 @@ class ResultsList extends Component {
                 <div className="detailContainer">
                     {data.map(game => <GameComponent key={game.game_id} details={game}/>)}
                 </div>
-                <h1>test header</h1>
             </div>
         )
     }
 }
-
-
 function mapStateToProps(state){
     return {
         gamelist: state.search.gamelist
