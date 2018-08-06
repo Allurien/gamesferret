@@ -49,7 +49,6 @@ class GameDetailsIndexPage extends Component{
 
     //---------------------
     componentDidUpdate(prevProps, prevState){
-        window.scrollTo(0, 0);
         if(prevProps.location.pathname !== this.props.location.pathname){
             this.props.setLoadingFlag();
             this.props.viewDetails(this.props.match.params.game_details);

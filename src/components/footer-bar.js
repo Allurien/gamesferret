@@ -12,9 +12,6 @@ class FooterBar extends Component {
                     <footer className="footer">
                         <ul>
                             <li>
-                                <a href="http://twitter.com/games_ferret"><img src={Twitter}/></a>
-                            </li>
-                            <li>
                                 <a href="mailto:gamesferrets@gmail.com"><img src={Mail}/></a>
                             </li>
                         </ul>
