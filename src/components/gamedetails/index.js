@@ -5,7 +5,7 @@ import iOS from '../../assets/images/iOS/Download_on_App_Store/Black_lockup/SVG/
 import Android from '../../assets/images/android/google-play-badge.png';
 import './gamedetails.scss';
 import {connect} from 'react-redux';
-import {viewDetails, setLoadingFlag, returnFavorites, saveFavorite, deleteFavorite} from '../../actions/';
+import {viewDetails, setLoadingFlag, returnFavorites, saveFavorite, clearGameDetails, deleteFavorite} from '../../actions/';
 import Screenshots from '../carousel/screenshot-carousel';
 import formatPostData from '../../helpers/';
 import axios from 'axios';
@@ -67,6 +67,9 @@ class GameDetailsIndexPage extends Component{
             var checkFavorites = this.favoriteCheck(this.props.match.params.game_details, newProps.favorites)
         this.handleArrayCheck();
         }
+    }
+    componentWillUnmount(){
+        this.props.clearGameDetails();
     }
     debounce(callback, delay){
         let timeout = null;
@@ -267,5 +270,5 @@ function mapStateToProps(state){
         loading: state.game.loading
     }
 }
-export default withRouter(connect(mapStateToProps, {viewDetails, returnFavorites, saveFavorite, deleteFavorite, setLoadingFlag})(GameDetailsIndexPage));
+export default withRouter(connect(mapStateToProps, {viewDetails, clearGameDetails, returnFavorites, saveFavorite, deleteFavorite, setLoadingFlag})(GameDetailsIndexPage));
 
