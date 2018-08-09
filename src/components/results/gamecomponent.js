@@ -3,6 +3,7 @@ import ReactStars from 'react-stars'
 import '../gamedetails/gamedetails.scss'
 import Modal from 'react-modal';
 import {withRouter, Link} from 'react-router-dom';
+import loadingFerret from '../../assets/images/loadingFerret.png';
 
 class GameResult extends Component {
     constructor () {
@@ -13,6 +14,13 @@ class GameResult extends Component {
           this.openModal = this.openModal.bind(this);
           this.closeModal = this.closeModal.bind(this);
     } 
+    componentDidMount(){
+        function preloader(){
+            var loadingImage = new Image();
+            loadingImage.src = {loadingFerret};
+            }
+            preloader();
+    }
     openModal() {
         this.setState({modalIsOpen: true});
       }
@@ -21,7 +29,6 @@ class GameResult extends Component {
       }
     render(){
         const miniDescription = this.props.details.description.replace(/<\/?[^><]*>|\&\#?\d*\w*\;/gm, " ");
-        
         const ratingChanged = (newRating) => {
         };
         Modal.setAppElement(document.getElementById('root'));

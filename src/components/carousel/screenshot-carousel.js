@@ -36,14 +36,26 @@ class Carousel extends Component {
         this.setState({modalIsOpen: false});
       }
     componentDidMount(){
-        // this.getImageData();
-        
+        if(this.props.details.screenshot_urls){
+            var images = this.props.details.screenshot_urls.split(",");
+            var preloadImages = [];
+            var preloadSrc = [];
+            images.forEach(function(image){preloadSrc.push(image)});
+            function preload() {
+                for (var i = 0; i < preloadSrc.length; i++) {
+                    preloadImages[i] = new Image();
+                    preloadImages[i].src = preloadSrc[i];
+                }
+            }
+            preload();
+        }
     }
   
     dataForClick(){
         const { currentIndex } = this.state;
         const { images } = this.props;
         this.props.viewDetails(images[currentIndex].game_id);
+        
         if (!this.props.details){
             return (
                 <div className="carousel-container">

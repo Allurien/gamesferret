@@ -55,6 +55,16 @@ class Carousel extends Component {
             images: resp.data.data
             //images: resp.data.data[icon_url]
         });
+        var preloadImages = [];
+        var preloadSrc = [];
+        this.state.images.forEach(function(game){preloadSrc.push(game.icon_url)});
+        function preload() {
+            for (var i = 0; i < preloadSrc.length; i++) {
+                preloadImages[i] = new Image();
+                preloadImages[i].src = preloadSrc[i];
+            }
+        }
+        preload();
     }
     enableClick(delay){
         setTimeout(() => {

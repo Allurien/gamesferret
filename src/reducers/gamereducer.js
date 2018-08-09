@@ -21,6 +21,8 @@ export default (state = DEFAULT_STATE, action) => {
         case types.SET_LOADING_FLAG:
             return {...state, loading: true
             } 
+        case types.CLEAR_GAME_DETAILS:
+            return {...state, details:{}}
         default:
             return state;
     }
