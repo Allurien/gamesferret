@@ -118,19 +118,23 @@ form {
 
 
 //Media Queries
+@media only screen and (max-width: 320px) {
+    .carousel-container {
+        max-height: 250px;
+    }
+}
 @media only screen and (max-width: 360px) {
     .stars>div>span{
         font-size: 18px;    
-    }
-    .logo {
-        max-width: 80%;
-        height: auto;
     }
 }
 @media only screen and (max-width: 450px) {
     .logo {
         max-width: 80%;
         height: auto;
+    }
+    .carousel-container {
+        width: 100%;
     }
 }
 @media only screen and (min-width: 361px) {
