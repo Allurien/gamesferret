@@ -173,17 +173,6 @@
   height: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-  .carousel-container {
-    max-width: 100%;
-    height: 290px;
-    width: 375px;
-}
-.indicators {
-  width: 80%;
-}
-
-}
 /* --------------------------------------- */
 .ImgAndArrowBox{
   display: flex;
