@@ -3,7 +3,7 @@ import './about.scss';
 import DevItem from './dev';
 import Steffany from './images/steffanyli.png';
 import Delray from './images/delray.jpg';
-import Stephanie from './images/tofuttinew.png';
+import Stephanie from './images/stephanie.png';
 import Sharry from './images/sharry.jpg';
 import Martin from './images/martin.jpg';
 import Dan from './images/dans.jpg';
