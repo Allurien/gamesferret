@@ -44,7 +44,7 @@ class GameDetailsIndexPage extends Component{
                     action: 'details'
                 }
             })
-        } 
+        }
     }
 
     //---------------------
@@ -55,7 +55,7 @@ class GameDetailsIndexPage extends Component{
         }
         if(
             Object.keys(prevProps.details).length !== Object.keys(this.props.details).length
-            || prevProps.details.id !== this.props.details.id 
+            || prevProps.details.id !== this.props.details.id
             || (!this.state.screenshots.length && Object.keys(this.props.details).length)
         ){
             this.splitScreenshots(this.props.details.screenshot_urls);
@@ -64,7 +64,7 @@ class GameDetailsIndexPage extends Component{
     componentWillReceiveProps(newProps){
         if(newProps.favorites){
             var checkFavorites = this.favoriteCheck(this.props.match.params.game_details, newProps.favorites)
-        this.handleArrayCheck();
+        this.handleArrayCheck(newProps);
         }
     }
     componentWillUnmount(){
@@ -87,16 +87,19 @@ class GameDetailsIndexPage extends Component{
             this.setState({
                 favorite: true
             });
-        
             this.debouncedSaveFavorite(this.props.user.id, this.props.match.params.game_details);
         }
     }
-    handleArrayCheck(){
-        if (this.favoriteCheck(this.props.match.params.game_details, this.props.favorites)){
+    handleArrayCheck(newProps){
+        if (this.favoriteCheck(this.props.match.params.game_details, newProps.favorites)){
             this.setState({
                 favorite: true
             });
-        } 
+            return;
+        }
+        this.setState({
+            favorite: false
+        });
     }
     favoriteCheck(favorite, array){
         if(!array){
@@ -200,7 +203,6 @@ class GameDetailsIndexPage extends Component{
                             { loggedIn ? <button type="button" className="favButton" onClick={this.handleFavoriteToggle.bind(this)}>
                                 <i className={`${favToggle} favIcon`}></i>
                             </button>: null }
-                            
                         </div>
                         <div>
                             <div className="gameDetailsTiny">
@@ -217,7 +219,7 @@ class GameDetailsIndexPage extends Component{
                                 </div>
                                 <div className="genre">
                                     <div>
-                                        Genre: 
+                                        Genre:
                                     </div>
                                     <div>
                                         {gameDetails.genres.replace(/,/g ,", ")}
@@ -246,9 +248,8 @@ class GameDetailsIndexPage extends Component{
                         </div>
 
                         { showRelated ? <h4 className="appHeader">Related Games</h4> : null }
-                           
-                    </div> 
-                </div>   
+                    </div>
+                </div>
                 {/* // Need to setup flag in render to indicate if there is any data in the related games section.
                 // Then set conditional to show or hide the gamerenderer component based on that flag. 
                 //This should remove the issue with failure on load. 
