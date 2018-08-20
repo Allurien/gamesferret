@@ -91,8 +91,7 @@ export function createAccount(userInfo){
                 }
             });
             if(resp.data.success){
-                
-                localStorage.setItem("user", JSON.stringify(resp.data.user));   
+                localStorage.setItem("user", JSON.stringify(resp.data.user));
                 dispatch ({
                     type: types.SIGN_UP,
                     user: resp.data.user
@@ -113,7 +112,6 @@ export function accountSignIn(userInfo){
                 action: 'login'
             }
         });
-        
         if(resp.data.success){
             localStorage.setItem("user", JSON.stringify(resp.data.user));
             return dispatch({
@@ -121,7 +119,6 @@ export function accountSignIn(userInfo){
                 user: resp.data.user
             });
         }
-        
         dispatch({
             type: types.AUTH_ERROR,
             error: resp.data.error
@@ -137,7 +134,7 @@ export function signOut(){
         params: {
             action: 'logout'
         }
-    });    
+    });
     return{
         type: types.SIGN_OUT,
         payload: resp

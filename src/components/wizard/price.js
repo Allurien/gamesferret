@@ -13,6 +13,9 @@ class Wizard extends Component {
             styling: "inactive-wizard-button"
     };
         this.handleIconClick = this.handleIconClick.bind(this);
+        localStorage.removeItem('price');
+        localStorage.removeItem('platform');
+        localStorage.removeItem('genre');
     }
     handleIconClick(e, title) {
         let price = {

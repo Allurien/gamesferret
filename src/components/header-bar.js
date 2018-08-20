@@ -203,10 +203,9 @@ class HeaderBar extends Component {
                         </li>
                         <Link to="/wizard"><li className="nav-text">Wizard</li></Link>
                         <Link to="/about"><li className="nav-text">About</li></Link>
-                        
                         {this.renderLinks()}
                     </ul>
-                    <img className="logo" src={WelcomeLogo}/>
+                    <Link className="logoLink" to="/"><img className="logo" src={WelcomeLogo}/></Link>
                     <div className="fas fa-search search-icon" onClick={this.toggleSearchBar.bind(this)}></div> 
 
                 </nav>
