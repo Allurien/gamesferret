@@ -122,6 +122,16 @@ form {
     .stars>div>span{
         font-size: 18px;    
     }
+    .logo {
+        max-width: 80%;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .logo {
+        max-width: 80%;
+        height: auto;
+    }
 }
 @media only screen and (min-width: 361px) {
     .stars>div>span{
