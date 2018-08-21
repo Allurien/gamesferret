@@ -10,7 +10,7 @@ class PriceOptions extends Component {
             <div className="wizardContainer">
                 <h2>Browse by Price</h2>
                 <div className="gameIcons">
-                    <div className="flexRow">
+                    <div className="flexRow browseRow">
                         <Link to='/browse/price/free'>
                             <div className="icon" >
                                 <img className="game_wiz" src ={Free} />

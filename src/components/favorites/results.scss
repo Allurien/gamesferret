@@ -1,4 +1,4 @@
-// CSS for Recommendations Page Component
+// CSS for Results Components
 .resContainer{
     text-align: center;
 }
@@ -31,6 +31,13 @@
 .titleLabel {
     text-transform:capitalize;
 }
+//Favorites
+.favText{
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+}
+
 @media only screen and (min-width: 600px) {
     .detailContainer{
         width: 50%;

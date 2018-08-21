@@ -23,52 +23,53 @@ class GenreOptions extends Component {
                 <h2>Browse by Genre</h2>
                 <div className="gameIcons">
                     <div className="flexRow">
-                        <Link to='/browse/genre/adventure'>
-                            <div className="icon" >
-                                <img className="game_wiz" src ={Adventure} />
-                                <div className="genreTitle">Adventure</div>
-                            </div>
-                        </Link>
-                        <Link to='/browse/genre/board'>
-                            <div className="icon">
-                                <img className="game_wiz" src ={Board} />
-                                <div className="genreTitle">Board</div>
-                            </div>
-                        </Link>
-                        <Link to='/browse/genre/strategy'>
-                            <div className="icon">
-                                <img className="game_wiz" src ={Strategy} />
-                                <div className="genreTitle">Strategy</div>
-                            </div>
-                        </Link>
-                    </div>
-
-                    <div className="flexRow">
-                        <Link to='/browse/genre/puzzle'>
-                            <div className="icon">
-                                <img className="game_wiz" src ={Puzzle} />
-                                <div className="genreTitle">Puzzle</div>
-                            </div>
-                        </Link>
                         <Link to='/browse/genre/action'>
                             <div className="icon">
                                 <img className="game_wiz" src ={Action} />
                                 <div className="genreTitle">Action</div>
                             </div>
                         </Link>
-                        <Link to='/browse/genre/role playing'>
+                        <Link to='/browse/genre/adventure'>
+                            <div className="icon" >
+                                <img className="game_wiz" src ={Adventure} />
+                                <div className="genreTitle">Adventure</div>
+                            </div>
+                        </Link>
+                        <Link to='/browse/genre/arcade'>
                             <div className="icon">
-                                <img className="game_wiz" src ={RolePlaying} />
-                                <div className="genreTitle">Role Playing</div>
+                                <img className="game_wiz" src ={Arcade} />
+                                <div className="genreTitle">Arcade</div>
                             </div>
                         </Link>
                     </div>
 
                     <div className="flexRow">
-                        <Link to='/browse/genre/arcade'>
+                        <Link to='/browse/genre/board'>
                             <div className="icon">
-                                <img className="game_wiz" src ={Arcade} />
-                                <div className="genreTitle">Arcade</div>
+                                <img className="game_wiz" src ={Board} />
+                                <div className="genreTitle">Board</div>
+                            </div>
+                        </Link>
+                        <Link to='/browse/genre/puzzle'>
+                            <div className="icon">
+                                <img className="game_wiz" src ={Puzzle} />
+                                <div className="genreTitle">Puzzle</div>
+                            </div>
+                        </Link>
+                        <Link to='/browse/genre/racing'>
+                            <div className="icon">
+                                <img className="game_wiz" src ={Racing} />
+                                <div className="genreTitle">Racing</div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="flexRow">
+                        <Link to='/browse/genre/role playing'>
+                            <div className="icon">
+                                <img className="game_wiz" src ={RolePlaying} />
+                                <div className="genreTitle">Role</div>
+                                <div className="genreTitle">Playing</div>
                             </div>
                         </Link>
                         <Link to='/browse/genre/simulation'>
@@ -77,10 +78,10 @@ class GenreOptions extends Component {
                                 <div className="genreTitle">Simulation</div>
                             </div>
                         </Link>
-                        <Link to='/browse/genre/racing'>
+                        <Link to='/browse/genre/strategy'>
                             <div className="icon">
-                                <img className="game_wiz" src ={Racing} />
-                                <div className="genreTitle">Racing</div>
+                                <img className="game_wiz" src ={Strategy} />
+                                <div className="genreTitle">Strategy</div>
                             </div>
                         </Link>
                     </div>

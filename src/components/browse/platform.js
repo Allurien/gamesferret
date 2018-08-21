@@ -13,13 +13,13 @@ class PriceOptions extends Component {
                     <div className="flexRow">
                         <Link to='/browse/platform/android'>
                             <div className="icon">
-                                <img className="game_wiz" src ={Android} />
+                                <img className="platformIcon" src ={Android} />
                                 <div className="genreTitle">Android</div>
                             </div>
                         </Link>
                         <Link to='/browse/platform/apple'>
                             <div className="icon">
-                                <img className="game_wiz" src ={Apple} />
+                                <img className="platformIcon" src ={Apple} />
                                 <div className="genreTitle">Apple</div>
                             </div>
                         </Link>
