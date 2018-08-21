@@ -6,6 +6,14 @@ import { formatPostData } from '../helpers';
 
 const BASE_URL = '/api/gameapp.php';
 
+export function clearGameDetails(){
+    return { type: types.CLEAR_GAME_DETAILS };
+}
+
+export function clearFavoriteDetails(){
+    return { type: types.CLEAR_FAVORITE_DETAILS };
+}
+
 export function viewDetails(gameid){
     const newItem = {searchrequest: gameid};
     const postItem = formatPostData(newItem);

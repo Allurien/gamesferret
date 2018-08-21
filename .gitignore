@@ -2,3 +2,6 @@
 .DS_Store
 node_modules
 config/*.php
+config/newdb.php
+newdb.php
+db.php

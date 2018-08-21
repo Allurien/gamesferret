@@ -12,5 +12,7 @@ export default {
     SEND_FAVORITE: "send_favorite",
     FAVORITE_RESULTS: "favorite_results",
     DELETE_FAVORITE: "delete_favorite",
-    SET_LOADING_FLAG: 'set_loading_flag'
+    SET_LOADING_FLAG: 'set_loading_flag',
+    CLEAR_GAME_DETAILS: 'clear_game_details',
+    CLEAR_FAVORITE_DETAILS: 'clear_favorite_details'
 };
