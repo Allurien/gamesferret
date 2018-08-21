@@ -2,11 +2,9 @@
     display: flex;
     flex-direction: column;
     color: #086788;
+    text-align: center;
 }
 .gameTitle{
-    display: flex;
-    justify-content: center;
-    margin: 0 5%;
 }
 .gameTitle h2{
     margin-bottom: 15px;
@@ -14,14 +12,8 @@
 }
 //-------------------------------------------------------------
 .upperDisplay{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .gameImg{
-    width: 75%;
-    display: flex;
-    justify-content: center;
 }
 .gameImg img{
     height: 250px;
@@ -64,12 +56,12 @@
 }
 //-------------------------------------------------------------
 .gameDetailsBottom{
-    height: 50%;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    margin: 2% 0;
 }
 .detailsBottomInnerBox{
     width: 90%;
+    margin: auto;
 }
 //----------------------------
 .gameDetailsTiny{

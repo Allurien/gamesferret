@@ -235,9 +235,6 @@ class GameDetailsIndexPage extends Component{
 
                 <div className="gameDetailsBottom">
                     <div className="detailsBottomInnerBox">
-                        <h4 className="descripHeader">
-                            Description
-                        </h4>
                         <div className="gameDescripOuterBox">
                             <div dangerouslySetInnerHTML={{__html: gameDetails.description}} className="gameDescrip" style={gameDescripExpand} />
                         </div>

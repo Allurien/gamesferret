@@ -28,7 +28,7 @@ class FavoritesList extends Component {
                 {this.props.favorites ? <GeneralText text={text} /> : null}
                 {this.props.favorites ? <div className="detailContainer">
                     {data.map(game => <Favorites key={game.game_id} details={game}/>)}
-                </div> : <h3>It looks like you don't have any favorites! You should save some.</h3>}
+                </div> : <h3 className="favText">It looks like you don't have any favorites! You should save some.</h3>}
             </div>
         )
     }
