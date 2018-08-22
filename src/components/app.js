@@ -25,13 +25,21 @@ import '../assets/css/app.scss';
 import SignIn from "../components/signin/sign_in";
 import SignUp from "../components/signin/sign_up";
 import Favorites from "../components/favorites";
+import Media from 'react-media';
 
 
 const App = () => (
         <div className="appOuterDiv">
             <div>
-            {/* <Header/> */}
-            <DesktopMenu/>
+            <Media query="(max-width: 749px)">
+                {matches =>
+                    matches ? (
+                        <Header/>
+                    ) : (
+                        <DesktopMenu/>
+                    )
+                }
+            </Media>
             </div>
             <div className="mainBody">
                 <Switch>
