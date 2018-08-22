@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Header from './header-bar';
+import DesktopMenu from './desktopMenu';
 import Home from './home';
 import NotFound from './notfound';
 import Browse from './browse';
@@ -29,7 +30,8 @@ import Favorites from "../components/favorites";
 const App = () => (
         <div className="appOuterDiv">
             <div>
-            <Header/>
+            {/* <Header/> */}
+            <DesktopMenu/>
             </div>
             <div className="mainBody">
                 <Switch>

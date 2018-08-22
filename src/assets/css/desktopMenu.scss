@@ -1,0 +1,193 @@
+.desktopHeader, .desktopMainMenu, .dropdownSearch .desktopBrowseMenu, .desktopUserMenu{
+    background: #00A7E1;
+    color: snow;
+}
+:any-link{
+    color: snow;
+}
+.desktopHeader{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    // height: 10%;
+    height: 73px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.appName{
+    margin: 20px 0;
+    color: snow;
+    text-shadow: 3px 3px 5px #086788;
+}
+// -------------------------------------------
+.desktopHeader button{
+    background: transparent;
+    border: none;
+    outline: none;
+    margin: 1%;
+}
+.menu-icon{
+    z-index: 2;
+    margin-left: 5px;
+    transition: 0.5s;
+}
+.hamburger-animation{
+    border: 4px solid #086788;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    height: 38px;
+    width: 39px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.hamburger-animation div{
+    background: #086788;
+    border-radius: 10px;
+    height: 4px;
+    width: 23px;
+    transition: .5s;
+}
+.hamburger-animation :nth-child(1){
+    margin-top: 3px;
+}
+.hamburger-animation :nth-child(2){
+    transform: initial;
+}
+.hamburger-animation :nth-child(3){
+    position: absolute;
+    top: 17px;
+}
+.hamburger-animation :nth-child(4){
+    margin-bottom: 4px;
+}
+// -------------------------------------------
+.search-icon{
+    margin-right: 10px;
+    font-size: 23px;
+    border: 4px solid #086788;
+    border-radius: 5px;
+    color: #086788;
+    padding: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.desktopMainMenu, .desktopBrowseMenu, .desktopUserMenu{
+    list-style-type: none;
+    display: flex;
+    transition: 0.5s;
+    padding: 0;
+}
+.desktopNavText{
+    text-shadow: 3px 3px 5px #086788;
+    padding: 15px 0 15px 10px;
+    font-size: 18px;
+    margin: auto 0;
+}
+.desktopNavText-bottom{
+}
+.desktopBrowseMenu, .desktopUserMenu{
+    background: #00A7E1;
+    margin: 15px 0 0 10px;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+}
+.desktopBrowseMenu li, .desktopUserMenu li{
+    text-shadow: 0 0 0 #086788;
+    font-size: 16px;
+}
+.desktopBrowseMenu a, .desktopUserMenu a{
+    color: snow;
+    flex-direction: column;
+}
+.desktopMainMenu{
+    z-index: 1;
+    position: fixed;
+    width: 0;
+    height: 73px;
+    top: 0;
+    margin: auto 0;
+    flex-direction: row;
+    // padding-top: 73px;
+    overflow-y: hidden;
+}
+.glyphicon-plus, .glyphicon-minus{
+    margin-right: 9px;
+    padding-top: 2px;
+}
+.plus-bar{
+    display: flex;
+    justify-content: space-between;
+}
+.menu-overlay{
+    z-index: 1;
+    position: fixed;
+    height: 105vh;
+    width: 100vw;
+    background: rgba(0,0,0,.4);
+    transform: translate(0%, 40%);
+    overflow: hidden;
+    transition: 0.5s;
+}
+.dropdownSearch{
+    background: linear-gradient(#00A7E1, #086788);
+    position: fixed;
+    top: 73px;
+    width: 100vw;
+    // top: 10%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+.dropForm{
+    position: relative;
+}
+.search-button-outer{
+    position: absolute;
+    background: transparent;
+    border: none;
+    border-left: 2px solid #f0c808;
+    right: 1px;
+    top: 1px;
+    height: 28px;
+    width: 45px;
+    opacity: .6;
+}
+.search-button-outer:focus{
+    outline: none;
+}
+.search-button-inner{
+    color: #f0c808;
+    position: absolute;
+    pointer-events: none;
+    top: 8px;
+    right: 15px;
+}
+// .search-button-line{
+//     position: absolute;
+//     right: 45px;
+//     top: 3px;
+//     height: 25px;
+//     border-left: 2px solid #f0c808;
+//     opacity: .5;
+// }
+.dropdownInput{
+    height: 30px;
+    width: 260px;
+    padding-left: 15px;
+}
+.blueLink {
+    color: rgb(8, 103, 136);
+}
+.logoLink{
+    text-align: center;
+}
+.logo {
+    max-width: 40%;
+    height: auto;
+}
