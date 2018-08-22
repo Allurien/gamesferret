@@ -141,9 +141,15 @@ form {
     .resContainer {
         margin-top:2%;
     }
+    .aboutPageContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
     .devItem{
-        width: 50%;
-        margin-bottom: 1%;
+        width: 40%;
+        margin: 0 auto;
+        margin-bottom: 2%;
     }
     .resItem {
         width: 20%;
