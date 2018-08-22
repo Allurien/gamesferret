@@ -12,7 +12,6 @@ class FavoritesList extends Component {
         this.props.returnFavorites(this.props.user.id);
     }
     componentDidUpdate(){
-        console.log('favorites', this.props);
     }
     componentWillUnmount(){
         this.props.clearFavoriteDetails();
