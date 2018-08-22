@@ -115,22 +115,22 @@ class DesktopMenu extends Component {
 
     renderLinks() {
         const userMenuStyle = {
-            height: this.state.dropdownsOpen.user ? "90px" : "0",
+            height: this.state.dropdownsOpen.user ? "80px" : "0",
             "marginTop": this.state.dropdownsOpen.user ? "15px" : "0"
         };
         if(this.props.auth) {
             return (
                 <Fragment>
                         <li className="desktopNavText">
-                            <div className="plus-bar" onClick={this.toggleUserMenu.bind(this)}>
+                            <div onClick={this.toggleUserMenu.bind(this)}>
                                 User
                                 <span className={`glyphicon glyphicon-${this.state.dropdownsOpen.user ? "minus" : "plus"}`} alt="list expand icon" aria-expanded={`${this.state.dropdownsOpen.user ? "true" : "false"}`} aria-label="User-Menu expansion"></span>
                             </div>
                             <ul className="desktopUserMenu" style={userMenuStyle}>
-                            <li className="desktopNavText desktopNavText-bottom">
+                            <li>
                                 <NavLink to ="/favorites">Favorites</NavLink>
                             </li>
-                            <li className="desktopNavText desktopNavText-bottom">
+                            <li>
                                 <NavLink onClick={this.props.signOut} to ="sign-in">Sign Out</NavLink>
                             </li>
                             </ul>
@@ -140,12 +140,8 @@ class DesktopMenu extends Component {
         }
         return(
             <Fragment>
-                <li className="desktopNavText desktopNavText-bottom">
-                    <NavLink to="/sign-up">Sign Up</NavLink>
-                </li>
-                <li className="nav-item desktopNavText">
-                    <NavLink className="nav-link" to ="/sign-in">Sign In</NavLink>
-                </li>
+                    <Link className="desktopNavText" to="/sign-up"><li>Sign Up</li></Link>
+                    <Link className="desktopNavText" to ="/sign-in"><li>Sign In</li></Link>
             </Fragment>
         )
     }
@@ -171,52 +167,52 @@ class DesktopMenu extends Component {
         // -----------------------------------
         const mainMenuStyle = {
             width: this.state.dropdownsOpen.main ? "100%" : "0",
-            "borderRight": this.state.dropdownsOpen.main ? "1px solid #F0C808" : "none"
         };
         const browseMenuStyle = {
-            height: this.state.dropdownsOpen.browse ? "90px" : "0",
-            "marginTop": this.state.dropdownsOpen.browse ? "15px" : "0"
+            height: this.state.dropdownsOpen.browse ? "160px" : "0",
+            "marginTop": this.state.dropdownsOpen.browse ? "0" : "0"
         };
         
         const searchDropDownStyle = {
-            height: this.state.dropdownsOpen.search ? "40px" : "0"
+            height: this.state.dropdownsOpen.search ? "30px" : "0"
         };
 
 
         return(
             <div>
-                <nav className="desktopHeader">
+                <div className="desktopHeader"></div>
+                <nav className="desktopNav">
                     <ul className="desktopMainMenu" style={mainMenuStyle}>
-                        <li className="desktopNavText">
-                            <div className="plus-bar" onClick={this.toggleBrowseMenu.bind(this)}>
-                                Browse
-                                <span className={`glyphicon glyphicon-${this.state.dropdownsOpen.browse ? "minus" : "plus"}`} alt="list expand icon" aria-expanded={`${this.state.dropdownsOpen.browse ? "true" : "false"}`} aria-label="Browse-Menu expansion"></span>
-                            </div>
-                            <ul className="desktopBrowseMenu" style={browseMenuStyle}>
-                                <Link to='/browse/genre'><li>By Genre</li></Link>
-                                <Link to='/browse/platform'><li>By Platform</li></Link>
-                                <Link to='/browse/price'><li>By Price</li></Link>
-                                <Link to='/browse/rating/results'><li>By Rating</li></Link>
+                        <Link className="desktopLogoLink" to="/"><li><img className="desktopLogo" src={WelcomeLogo}/></li></Link>
+                        <li className="desktopNavContainer">
+                            <ul className="desktopNavItems">
+                                <li className="desktopNavText">
+                                    <div onClick={this.toggleBrowseMenu.bind(this)}>
+                                        Browse
+                                        <span className={`glyphicon glyphicon-${this.state.dropdownsOpen.browse ? "minus" : "plus"}`} alt="list expand icon" aria-expanded={`${this.state.dropdownsOpen.browse ? "true" : "false"}`} aria-label="Browse-Menu expansion"></span>
+                                    </div>
+                                    <ul className="desktopBrowseMenu" style={browseMenuStyle}>
+                                        <Link to='/browse/genre'><li>By Genre</li></Link>
+                                        <Link to='/browse/platform'><li>By Platform</li></Link>
+                                        <Link to='/browse/price'><li>By Price</li></Link>
+                                        <Link to='/browse/rating/results'><li>By Rating</li></Link>
+                                    </ul>
+                                </li>
+                                <Link to="/wizard" className="desktopNavText"><li>Wizard</li></Link>
+                                <Link to="/about" className="desktopNavText"><li>About</li></Link>
+                                {this.renderLinks()}
+                                <li className="desktopDropdownSearch">
+                                    <form className="desktopForm" onSubmit={this.handleSearchSubmit.bind(this)}>
+                                        <button className="desktopSearchButtonInner" type="submit">
+                                            <div className="fa fa-search" aria-hidden="true"></div>
+                                        </button>
+                                        <input className="desktopDropdownInput" type="text" placeholder="Search..." aria-label="Search" onChange={this.handleSearchInputChange.bind(this)} onClick={this.handleSearchTextClick.bind(this)} value={this.state.searchTerm}/>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
-                        <Link to="/wizard" className="desktopNavText"><li>Wizard</li></Link>
-                        <Link to="/about" className="desktopNavText"><li>About</li></Link>
-                        {this.renderLinks()}
-                        <Link className="logoLink" to="/"><li><img className="logo" src={WelcomeLogo}/></li></Link>
-                        <li><div className="fas fa-search search-icon" onClick={this.toggleSearchBar.bind(this)}></div></li>
                     </ul>
-
                 </nav>
-                <div className="dropdownSearch" style={searchDropDownStyle}>
-                    <div>
-                        <form className="form-inline dropForm" onSubmit={this.handleSearchSubmit.bind(this)}>
-                            <button className="search-button-outer" type="submit">
-                                <div className="fa fa-search search-button-inner" aria-hidden="true"></div>
-                            </button>
-                            <input className="dropdownInput form-control form-control-sm ml-3 w-75" type="text" placeholder="Search..." aria-label="Search" onChange={this.handleSearchInputChange.bind(this)} onClick={this.handleSearchTextClick.bind(this)} value={this.state.searchTerm}/>
-                        </form>
-                    </div>
-                </div>
             </div>
         )
     }
