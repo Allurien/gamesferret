@@ -26,12 +26,11 @@ import SignIn from "../components/signin/sign_in";
 import SignUp from "../components/signin/sign_up";
 import Favorites from "../components/favorites";
 
-
 const App = () => (
         <div className="appOuterDiv">
             <div>
-            {/* <Header/> */}
-            <DesktopMenu/>
+                {/* <DesktopMenu/> */}
+                <Header/>
             </div>
             <div className="mainBody">
                 <Switch>

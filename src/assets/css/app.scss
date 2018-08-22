@@ -135,9 +135,6 @@ form {
     }
 }
 @media only screen and (min-width: 750px) {
-    .stars>div>span{
-        font-size: 30px;
-    }
     .resItemImg {
         margin-bottom: 5%;
     }
@@ -149,7 +146,8 @@ form {
         margin-bottom: 1%;
     }
     .resItem {
-        width: 21%;
+        width: 20%;
+        margin: 0 2%;
     }
     .detailContainer{
         width: 80%;
@@ -162,5 +160,19 @@ form {
     }
     .notFound img {
         max-width: 30%;
+    }
+    .gameBlock {
+        margin-bottom: 15%
+    }
+}
+@media only screen and (min-width: 750px) and (max-width: 909px) {
+    .stars>div>span{
+        font-size: 24px;
+    }
+    
+}
+@media only screen and (min-width: 910px) {
+    .stars>div>span{
+        font-size: 30px;
     }
 }

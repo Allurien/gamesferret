@@ -42,12 +42,12 @@
     justify-content: flex-end;
 }
 .desktopNavContainer {
-margin-top: 1vh;
+    margin: auto 0;
 }
 .desktopNavText{
     text-shadow: 3px 3px 5px #086788;
     padding: 15px 0 15px 5px;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -88,6 +88,7 @@ margin-top: 1vh;
 }
 .desktopBrowseMenu a:hover, .desktopUserMenu a:hover{
     border-bottom: 1px dashed #F0C808;
+    text-decoration: none;
 }
 li.desktopNavText:hover, a.desktopNavText:hover {
     color: #23527c;
@@ -142,7 +143,7 @@ li.desktopNavText:hover, a.desktopNavText:hover {
 }
 .desktopDropdownInput{
     height: 30px;
-    width: 200px;
+    width: 260px;
     padding-left: 15px;
     color: #086788;
     border: none;
@@ -160,9 +161,3 @@ li.desktopNavText:hover, a.desktopNavText:hover {
     width: 100%;
     height: auto;
 }
-// @media only screen and (min-width: 770px){
-//     .desktopNavText>li {
-//         font-size: 14px;
-//         padding: 15px 0 15px 5px;
-//     }
-// }
