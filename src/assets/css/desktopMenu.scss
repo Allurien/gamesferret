@@ -46,9 +46,10 @@
 }
 .desktopNavText{
     text-shadow: 3px 3px 5px #086788;
-    padding: 15px 0 15px 5px;
+    padding: 17px 0 15px 5px;
     font-size: 16px;
     margin: 0;
+    max-width: 12vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,7 +71,7 @@
 }
 .desktopBrowseMenu, .desktopUserMenu{
     background: #00A7E1;
-    padding: 0 10px;
+    padding: 0 12px 0 12px;
     margin: 15px 0 0 0;
     height: 0;
     overflow: hidden;
@@ -79,7 +80,7 @@
 }
 .desktopBrowseMenu li, .desktopUserMenu li{
     text-shadow: 0 0 0 #086788;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 2vh;
 }
 .desktopBrowseMenu a, .desktopUserMenu a{
@@ -87,12 +88,14 @@
     flex-direction: column;
 }
 .desktopBrowseMenu a:hover, .desktopUserMenu a:hover{
-    border-bottom: 1px dashed #F0C808;
+    color: #23527c;
     text-decoration: none;
+    cursor: pointer;
 }
 li.desktopNavText:hover, a.desktopNavText:hover {
     color: #23527c;
     text-decoration: none;
+    cursor: pointer;
 }
 .desktopMainMenu{
     z-index: 1;
@@ -116,7 +119,7 @@ li.desktopNavText:hover, a.desktopNavText:hover {
     // position: fixed;
     // top: 13px;
     // right:20px;
-    width: 20vw;
+    // width: 20vw;
     // top: 10%;
     z-index: 2;
     display: flex;
@@ -131,6 +134,7 @@ li.desktopNavText:hover, a.desktopNavText:hover {
     overflow-x: hidden;
     border-radius: 5px;
     margin-right: 2vw;
+    margin-left: 1vw;
 }
 .desktopSearchButtonInner:focus{
     outline: none;
@@ -143,8 +147,8 @@ li.desktopNavText:hover, a.desktopNavText:hover {
 }
 .desktopDropdownInput{
     height: 30px;
-    width: 260px;
-    padding-left: 15px;
+    width: 20vw;
+    padding-left: 10px;
     color: #086788;
     border: none;
 }
@@ -158,6 +162,6 @@ li.desktopNavText:hover, a.desktopNavText:hover {
     margin: auto 0;
 }
 .desktopLogo {
-    width: 100%;
+    width: 200px;
     height: auto;
 }
