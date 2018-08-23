@@ -115,7 +115,7 @@
         margin-bottom: 4vh;
     }
     .upperDisplay {
-        width: 30%;
+        width: 40%;
         margin-left: 10%;
         order: 1;
     }
@@ -125,15 +125,15 @@
         order: 3;
     }
     .screenshots {
-        width: 40%;
+        width: 50%;
         margin-top: 10px;
-        order: 4;
+        order: 2;
         margin-bottom: 4vh;
     }
     .gameDetailsDescription {
         width: 50%;
-        margin-left: 5%;
-        order: 2;
+        order: 4;
+        margin-bottom: 4vh;
     }
     .relatedCarousel {
         order: 5;
@@ -141,10 +141,10 @@
         margin-bottom: 4vh;
     }
     button.leftButton {
-        left: 53%;
+        left: 61%;
     }
     button.rightButton {
-        right: 13%;
+        right: 11%;
     }
     // .gameDescrip{
     //     position: absolute;

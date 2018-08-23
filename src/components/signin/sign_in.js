@@ -30,9 +30,9 @@ class SignIn extends Component {
                 <div className="row col-xs-10 col-xs-offset-1">
                     <Field type="password" className="signInInput" name="password" component={renderInputs} label="Password"/>
                 </div>
-                <div className="row  col-xs-10 col-xs-offset-1">
+                <div className="row col-xs-10 col-xs-offset-1">
                     <div className="signInInput">
-                        <button className="btn btn-outline-info btn-sm col-xs-6 col-xs-offset-3">Sign In</button>
+                        <button className="btn accountBtn btn-info btn-sm col-xs-4 col-xs-offset-4">Sign In</button>
                         <p className="text-danger">{authError}</p>
                     </div>
                 </div>

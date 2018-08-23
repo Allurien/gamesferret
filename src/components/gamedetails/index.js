@@ -162,16 +162,21 @@ class GameDetailsIndexPage extends Component{
         const data = this.props.details.related_game_apps;
         let showRelated = true;
         if(!this.props.details.related_game_apps ){
-            showRelated = false;            
+            showRelated = false;
         }
         let loggedIn = false;
         if(localStorage.getItem("user")){
-            loggedIn = true;            
+            loggedIn = true;
         }
 
         // --------------------------------------
         return(
             <div className="singleGamePage">
+                <button
+                    className="backBtn"
+                    onClick={this.props.history.goBack}>
+                    Go Back
+                </button>
                 <div className="gameTitle">
                     <h2>{gameDetails.app_name}</h2>
                 </div>

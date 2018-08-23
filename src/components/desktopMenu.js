@@ -123,7 +123,7 @@ class DesktopMenu extends Component {
                 <Fragment>
                         <li className="desktopNavText">
                             <div onClick={this.toggleUserMenu.bind(this)}>
-                                User
+                                Account
                                 <span className={`glyphicon glyphicon-${this.state.dropdownsOpen.user ? "minus" : "plus"}`} alt="list expand icon" aria-expanded={`${this.state.dropdownsOpen.user ? "true" : "false"}`} aria-label="User-Menu expansion"></span>
                             </div>
                             <ul className="desktopUserMenu" style={userMenuStyle}>

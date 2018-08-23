@@ -11,7 +11,7 @@ import types from "./actions/types";
 import './/assets/css/app.scss';
 
 const store = createStore(rootReducer, {}, applyMiddleware(Promise, think));
-
+document.body.addEventListener('touchstart',function(){});
 if(localStorage.getItem("user")) {
     const userData = JSON.parse(localStorage.getItem('user'));
     store.dispatch({
@@ -27,5 +27,4 @@ ReactDOM.render(
         </Router>
     </Provider>,
     document.getElementById('root')
-    
 );

@@ -40,7 +40,7 @@ form {
     max-width: 50%;
 }
 .notFound :any-link {
-    color: rgb(8, 103, 136);
+    color: #086788;
   }
 // Loader Component
 .loaderContainer {
@@ -69,6 +69,18 @@ form {
     text-align: center;
     margin: auto;
 }
+.accountBtn {
+    background-color: #00A7E1;
+    border-color: #086788;
+}
+.backBtn {
+    border: 2px solid #00A7E1;
+    border-radius: 5px;
+    margin: auto;
+}
+.backBtn:hover {
+    text-shadow: 1px 1px 3px #1d3557;
+}
 
 //Footer
 .footerContainer{
@@ -76,24 +88,24 @@ form {
     background: #00A7E1;
     color: snow;
     flex-shrink: 0;
-  }
-  .footer {
+}
+.footer {
     display: flex;
     flex-direction: column;
     font-size: .7em;
-  }
-  .footer ul {
+}
+.footer ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
     padding: 0;
     margin: 10px 0 7px 0;
-  }
-  .footer p {
+}
+.footer p {
     display: flex;
     justify-content: center;
     margin: 0 0 8px;
-  }
+}
 
 //Animation
 .spinner {
@@ -120,7 +132,7 @@ form {
 
 @media only screen and (max-width: 360px) {
     .stars>div>span{
-        font-size: 18px;    
+        font-size: 18px;
     }
 }
 @media only screen and (max-width: 450px) {
@@ -128,10 +140,15 @@ form {
         max-width: 80%;
         height: auto;
     }
+    .modal-main {
+        margin-top: 8%;
+        width: 80%;
+        margin-left: 12%;
+    }
 }
 @media only screen and (min-width: 361px) {
     .stars>div>span{
-        font-size: 24px;   
+        font-size: 24px;
     }
 }
 @media only screen and (min-width: 750px) {
@@ -158,11 +175,7 @@ form {
     .detailContainer{
         width: 80%;
         margin: auto;
-    }
-    .modal-main {
-        margin-top: 8%;
-        width: 60%;
-        margin-left: 20%;
+        margin-bottom: 10vh;
     }
     .notFound img {
         max-width: 30%;

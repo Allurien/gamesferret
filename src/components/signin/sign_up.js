@@ -22,17 +22,17 @@ class SignUp extends Component {
             <form onSubmit={handleSubmit(this.handleSignUp.bind(this))}>
                 <h1 className="text-center">Create Account</h1>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field className="col-xs-10 col-xs-offset-1" name="username" component={renderInputs} label="Username"/>
+                    <Field name="username" component={renderInputs} label="Username"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field className="col-xs-10 col-xs-offset-1" name="email" component={renderInputs} label="Email"/>
+                    <Field name="email" component={renderInputs} label="Email"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field type="password" className="col-xs-10 col-xs-offset-1" name="password" component={renderInputs} label="Password"/>
+                    <Field type="password" name="password" component={renderInputs} label="Password"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
                     <div className="d-flex col-xs-10 col-xs-offset-1 justify-content-end">
-                        <button className="btn btn-outline-info btn-sm col-xs-10 col-xs-offset-1">Sign Up</button>
+                        <button className="btn accountBtn btn-info btn-sm col-xs-4 col-xs-offset-4">Sign Up</button>
                     </div>
                 </div>
             </form>
