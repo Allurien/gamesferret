@@ -22,13 +22,13 @@ class SignUp extends Component {
             <form onSubmit={handleSubmit(this.handleSignUp.bind(this))}>
                 <h1 className="text-center">Create Account</h1>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field name="username" component={renderInputs} label="Username"/>
+                    <Field name="username" type="text" component={renderInputs} label="Username"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field name="email" component={renderInputs} label="Email"/>
+                    <Field name="email" type="email" component={renderInputs} label="Email"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field type="password" name="password" component={renderInputs} label="Password"/>
+                    <Field type="password"  type="password" name="password" component={renderInputs} label="Password"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
                     <div className="d-flex col-xs-10 col-xs-offset-1 justify-content-end">
@@ -46,12 +46,18 @@ function validate(values) {
 
     if(!username) {
         errors.username = "Please enter your username";
+    } else if (values.username.length < 6) {
+        errors.username = 'Must be 6 characters or more'
     }
     if(!email) {
         errors.email = "Please enter your email";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = 'Invalid email address'
     }
     if (!password) {
         errors.password = "Please enter a password"
+    } else if (values.password.length < 6) {
+        errors.password = 'Must be 6 characters or more'
     }
     if (!confirmPassword) {
         errors.confirmPassword = "Passwords do not match"

@@ -75,7 +75,9 @@ class HeaderBar extends Component {
     }
     handleSearchSubmit(event){
         event.preventDefault();
-
+        if(this.state.searchTerm===""){
+            return;
+        }
         const location = `/search/results?search_term=${this.state.searchTerm}`;
         this.props.history.push(location);
 

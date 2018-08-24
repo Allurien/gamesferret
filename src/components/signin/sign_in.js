@@ -19,23 +19,24 @@ class SignIn extends Component {
 
     render() {
         const {handleSubmit, authError} = this.props;
+ 
 
         return (
 
             <form onSubmit={handleSubmit(this.handleSignIn.bind(this))}>
                 <h1 className="text-center">Sign-In</h1>
                 <div className="row  col-xs-10 col-xs-offset-1">
-                    <Field className="signInInput" name="email" component={renderInputs} label="Email"/>
+                    <Field className="signInInput" name="email" type="email"  component={renderInputs} label="Email"/>
             </div>
                 <div className="row col-xs-10 col-xs-offset-1">
-                    <Field type="password" className="signInInput" name="password" component={renderInputs} label="Password"/>
+                    <Field type="password" className="signInInput" type="password" name="password" component={renderInputs} label="Password"/>
                 </div>
                 <div className="row col-xs-10 col-xs-offset-1">
                     <div className="signInInput">
                         <button className="btn accountBtn btn-info btn-sm col-xs-4 col-xs-offset-4">Sign In</button>
-                        <p className="text-danger">{authError}</p>
                     </div>
                 </div>
+                <p className="text-danger col-xs-4 col-xs-offset-4 text-center">{authError}</p>
             </form>
         )
     }

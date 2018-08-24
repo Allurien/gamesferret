@@ -72,12 +72,15 @@ form {
 .accountBtn {
     background-color: #00A7E1;
     border-color: #086788;
+    margin-bottom: 1vh;
 }
 .backBtn {
     border: 2px solid #00A7E1;
     border-radius: 5px;
     margin: auto;
     margin-top: 3vh;
+    margin-bottom: 3vh;
+    order: 6;
 }
 .backBtn:hover {
     text-shadow: 1px 1px 3px #1d3557;

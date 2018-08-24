@@ -74,7 +74,7 @@ class GameResult extends Component {
                                 </div>
                             </div>
                             <div className="modalRow">
-                                <button className='detailsButton'><Link to={`/game/${this.props.details.game_id}/gamedetails`}>View Game Details</Link></button>
+                                <Link className='detailsButton' to={`/game/${this.props.details.game_id}/gamedetails`}>View Game Details</Link>
                                 <button className='detailsButton' onClick={this.closeModal}>Continue Browsing</button>
                             </div>
                         </div>

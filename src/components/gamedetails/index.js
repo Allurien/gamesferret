@@ -172,11 +172,6 @@ class GameDetailsIndexPage extends Component{
         // --------------------------------------
         return(
             <div className="singleGamePage">
-                <button
-                    className="backBtn"
-                    onClick={this.props.history.goBack}>
-                    Go Back
-                </button>
                 <div className="gameTitle">
                     <h2>{gameDetails.app_name}</h2>
                 </div>
@@ -260,6 +255,11 @@ class GameDetailsIndexPage extends Component{
                 { showRelated ? <h3 className="appHeader">Related Games</h3> : null }
                     {this.props.details.related_game_apps ? <GameRenderer data={data} /> : null }
                 </div>
+                <button
+                    className="backBtn"
+                    onClick={this.props.history.goBack}>
+                    Go Back
+                </button>
             </div>
         );
     }
