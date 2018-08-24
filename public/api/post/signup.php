@@ -6,8 +6,9 @@ if (mysqli_connect_errno()) {
 }
 
 $username = trim($_POST['username']);
-$email = trim($_POST['email']);
 $password = trim($_POST['password']);
+$email = trim($_POST['email']);
+
 
 $output['error'] = [
     'username'=> '',
@@ -44,13 +45,27 @@ function confirmQuery($result) {
           die("QUERY FAILED ." . mysqli_error($conn));
       }
 }
+// Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
+// Check if email address is empty
 if($email ==''){
     $output['error']['email'] = 'Email cannot be empty';
 }
- if(email_exists($email)){
+
+// Validate e-mail
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo("$email is a valid email address");
+ } else {
+    $output['error']['email'] = "$email is not a valid email address";
+ }
+ 
+// Check if email address exists
+if(email_exists($email)){
     $output['error']['email'] = 'Email already exists';
 }
+
+
 
 function email_exists($email){
     global $conn;
