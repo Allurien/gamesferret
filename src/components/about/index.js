@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.scss';
 import DevItem from './dev';
-import Steffany from './images/steffanyli.png';
+import Steffany from './images/steffanyli.jpg';
 import Delray from './images/delray.jpg';
 import Stephanie from './images/stephanie.png';
 import Sharry from './images/sharry.jpg';

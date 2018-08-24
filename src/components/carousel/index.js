@@ -125,7 +125,7 @@ class Carousel extends Component {
         const id = game_id;
         const miniDescription = description.replace(/<\/?[^><]*>|\&\#?\d*\w*\;/gm, " ");
         return (
-            <div className="center-all"> 
+            <div className="center-all">
                 <div className="carousel-container">
                     <Transition
                         transitionName={`carousel-${direction}`}
@@ -141,40 +141,40 @@ class Carousel extends Component {
                                 <i className="fa fa-chevron-right"></i>
                             </button>
                         </div>
-                        <Modal 
+                        <Modal
                             isOpen={this.state.modalIsOpen}
                             onAfterOpen={this.afterOpenModal}
-                            onRequestClose={this.closeModal} 
-                            shouldCloseOnOverlayClick={true} 
+                            onRequestClose={this.closeModal}
+                            shouldCloseOnOverlayClick={true}
                             contentLabel="Game Details Modal"
                             className='modal-main'
                             >
                             <div className="modalContainer">
                                 <div className="modalDetails">
-                                <h3>{text}</h3>
-                                <div className="modalRow">
-                                    <img className='modalImg' src={src} alt={text} />
-                                    <div className="infoColumn">
-                                        <p>{ (miniDescription.length > 60) ? ((miniDescription.substring(0,60-3)) + '...') : miniDescription }</p>
-                                        <div className="ratingStars">
-                                            <ReactStars count={5} size={18} color2={'#ffd700'} value={parseFloat(rating)} edit={false}/>
+                                    <h3>{text}</h3>
+                                    <div className="modalRow">
+                                        <img className='modalImg' src={src} alt={text} />
+                                        <div className="infoColumn">
+                                            <p>{ (miniDescription.length > 60) ? ((miniDescription.substring(0,60-3)) + '...') : miniDescription }</p>
+                                            <div className="ratingStars">
+                                                <ReactStars count={5} size={18} color2={'#ffd700'} value={parseFloat(rating)} edit={false}/>
+                                            </div>
+                                            <h4>Price: {price}</h4>
                                         </div>
-                                        <h4>Price: {price}</h4>
+                                    </div>
+                                    <div className="modalRow">
+                                    <Link to={`/game/${id}/gamedetails`}><button className='detailsButton'>View Game Details</button></Link>
+                                        <button className='detailsButton' onClick={this.closeModal}>Continue Browsing</button>
                                     </div>
                                 </div>
-                                <div className="modalRow">
-                                <Link to={`/game/${id}/gamedetails`}><button className='detailsButton'>View Game Details</button></Link>
-                                    <button className='detailsButton' onClick={this.closeModal}>Continue Browsing</button>
-                                </div>
-                            </div>
                             </div>
                         </Modal>
                     </Transition>
+                    <h4 className="carousel-text">{text}</h4>
+                    <h5 className="genreLabel">{genre} Game</h5>
                 </div>
-                <h4 className="carousel-text">{text}</h4>
-                <h5 className="genreLabel">{genre} Game</h5>
+
                 <Indicators onClick={this.directToImage.bind(this)} count={images.length} current={currentIndex} />
-                
             </div>
         );
     }
