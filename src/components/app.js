@@ -30,7 +30,7 @@ import Media from 'react-media';
 const App = () => (
         <div className="appOuterDiv">
             <div>
-                <Media query="(max-width: 749px)">
+                <Media query="(max-width: 789px)">
                     {matches =>
                         matches ? (
                             <Header/>
