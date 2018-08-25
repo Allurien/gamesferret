@@ -3,7 +3,7 @@ import {NavLink, Link, withRouter} from 'react-router-dom';
 import '../assets/css/desktopMenu.scss'
 import {signIn, signOut} from "../actions";
 import { connect } from "react-redux";
-import WelcomeLogo from "../assets/images/wizard-icons/headerlogo.png"
+import WelcomeLogo from "../assets/images/wizard-icons/headerlogo.png";
 
 
 class DesktopMenu extends Component {
@@ -20,11 +20,11 @@ class DesktopMenu extends Component {
             searchTerm: "",
             searchInputClicks: 0
         };
+        this.closeMenus = this.closeMenus.bind(this);
     }
 
     toggleMainMenu(event){
         event.stopPropagation();
-
         this.state.dropdownsOpen.main = !this.state.dropdownsOpen.main;
         this.state.dropdownsOpen.browse = false;
         this.state.dropdownsOpen.user = false;
@@ -112,13 +112,26 @@ class DesktopMenu extends Component {
             });
         }
     }
+    componentDidMount() {
+        document.addEventListener('mousedown', this.closeMenus);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.closeMenus);
+    }
+    closeMenus(event){
+        if(event.target!==this && this.state.dropdownsOpen.browse === true){
+            this.toggleBrowseMenu(event);
+        }
+        if(event.target!==this && this.state.dropdownsOpen.user === true){
+            this.toggleUserMenu(event)
+        }
+    }
 
 
-
-    renderLinks() {
+    renderLinks(){
         const userMenuStyle = {
-            height: this.state.dropdownsOpen.user ? "80px" : "0",
-            "marginTop": this.state.dropdownsOpen.user ? "15px" : "0"
+            height: this.state.dropdownsOpen.user ? "65px" : "0",
+            "marginBottom": this.state.dropdownsOpen.user ? "15px" : "0"
         };
         if(this.props.auth) {
             return (
@@ -148,7 +161,7 @@ class DesktopMenu extends Component {
         )
     }
 
-    render() {
+    render(){
         const menuOverlayStyle = {
             background: this.state.dropdownsOpen.main ? "rgba(255,255,255,.5)" : "rgba(0,0,0,0)",
             "pointerEvents": this.state.dropdownsOpen.main ? "auto" : "none"
@@ -171,8 +184,8 @@ class DesktopMenu extends Component {
             width: this.state.dropdownsOpen.main ? "100%" : "0",
         };
         const browseMenuStyle = {
-            height: this.state.dropdownsOpen.browse ? "160px" : "0",
-            "marginTop": this.state.dropdownsOpen.browse ? "0" : "0"
+            height: this.state.dropdownsOpen.browse ? "135px" : "0",
+            "marginBottom": this.state.dropdownsOpen.browse ? "15px" : "0"
         };
         
         const searchDropDownStyle = {
