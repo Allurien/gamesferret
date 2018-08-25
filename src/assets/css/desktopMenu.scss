@@ -1,0 +1,178 @@
+.desktopHeader, .desktopMainMenu, .dropdownSearch .desktopBrowseMenu, .desktopUserMenu{
+    background: #00A7E1;
+    color: snow;
+}
+.desktopMenuOverlay{
+    z-index: 1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    overflow: hidden;
+    transition: 0.5s;
+}
+.desktopHeader{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+
+}
+.desktopNav{
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    margin: auto;
+}
+// -------------------------------------------
+.desktopHeader button{
+    background: transparent;
+    border: none;
+    outline: none;
+    margin: 1%;
+}
+// -------------------------------------------
+.desktopSearchIcon{
+    margin-right: 10px;
+    font-size: 16;
+    border: 4px solid #086788;
+    border-radius: 5px;
+    color: #086788;
+    padding: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.desktopMainMenu, .desktopBrowseMenu, .desktopUserMenu{
+    list-style-type: none;
+    display: flex;
+    transition: 0.5s;
+    padding: 0;
+    justify-content: flex-end;
+    margin: auto 0;
+}
+.desktopNavContainer {
+}
+.desktopNavText{
+    text-shadow: 3px 3px 5px #086788;
+    padding: 17px 0 15px 5px;
+    font-size: 16px;
+    margin: 0;
+    max-width: 12vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly
+}
+.desktopNavText>li {
+    margin-right: 0;
+    padding: 0 10px;
+}
+.desktopNavText>div>span {
+    margin-right: 0;
+}
+.desktopNavItems {
+    list-style-type: none;
+    display: flex;
+    transition: 0.5s;
+    padding: 0;
+    align-items: baseline;
+}
+.desktopBrowseMenu, .desktopUserMenu{
+    background: #00A7E1;
+    padding: 0 12px;
+    // margin: 15px 0 0 0;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.desktopBrowseMenu li, .desktopUserMenu li{
+    text-shadow: 0 0 0 #086788;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.desktopBrowseMenu a, .desktopUserMenu a{
+    color: snow;
+    flex-direction: column;
+}
+.desktopBrowseMenu a:hover, .desktopUserMenu a:hover{
+    color: #23527c;
+    text-decoration: none;
+    cursor: pointer;
+}
+li.desktopNavText:hover, a.desktopNavText:hover {
+    color: #23527c;
+    text-decoration: none;
+    cursor: pointer;
+}
+.desktopMainMenu{
+    z-index: 1;
+    position: absolute;
+    width: 0;
+    height: 60px;
+    top: 0;
+    margin: auto 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.desktopPlusBar{
+    display: flex;
+    justify-content: flex-end;
+}
+.glyphicon-plus, .glyphicon-minus{
+    margin-left: 9px;
+    padding-top: 2px;
+}
+.desktopDropdownSearch{
+    // position: fixed;
+    // top: 13px;
+    // right:20px;
+    // width: 20vw;
+    // top: 10%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-left: 5px;
+}
+.desktopForm{
+    display: inline;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-radius: 5px;
+    margin-right: 2vw;
+    margin-left: 1vw;
+}
+.desktopSearchButtonInner:focus{
+    outline: none;
+}
+.desktopSearchButtonInner{
+    color: #f0c808;
+    position: absolute;
+    top: 18px;
+    right: 2vw;
+}
+.desktopDropdownInput{
+    height: 30px;
+    width: 20vw;
+    padding-left: 10px;
+    color: #086788;
+    border: none;
+}
+.desktopDropdownInput:focus {
+    outline: 5px auto #086788;
+}
+.desktopLogoLink{
+    text-align: center;
+    width: 25%;
+    padding: 0 2vw;
+    margin: auto 0;
+}
+.desktopLogo {
+    width: 200px;
+    height: auto;
+}

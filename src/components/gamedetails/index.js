@@ -162,11 +162,11 @@ class GameDetailsIndexPage extends Component{
         const data = this.props.details.related_game_apps;
         let showRelated = true;
         if(!this.props.details.related_game_apps ){
-            showRelated = false;            
+            showRelated = false;
         }
         let loggedIn = false;
         if(localStorage.getItem("user")){
-            loggedIn = true;            
+            loggedIn = true;
         }
 
         // --------------------------------------
@@ -180,7 +180,7 @@ class GameDetailsIndexPage extends Component{
                         <img src={gameDetails.icon_url}/>
                     </div>
                 </div>
-                <div className="gameDetailsBottom">
+                <div className="gameDetailsBottom gameDetailStats">
                     <div className="detailsBottomInnerBox">
                         <div className="priceAndRating">
                             <h4>
@@ -233,11 +233,8 @@ class GameDetailsIndexPage extends Component{
                     <Screenshots images={this.state.screenshots}/>
                 </div>
 
-                <div className="gameDetailsBottom">
+                <div className="gameDetailsBottom gameDetailsDescription">
                     <div className="detailsBottomInnerBox">
-                        <h4 className="descripHeader">
-                            Description
-                        </h4>
                         <div className="gameDescripOuterBox">
                             <div dangerouslySetInnerHTML={{__html: gameDetails.description}} className="gameDescrip" style={gameDescripExpand} />
                         </div>
@@ -247,7 +244,7 @@ class GameDetailsIndexPage extends Component{
                             </button>
                         </div>
 
-                        { showRelated ? <h4 className="appHeader">Related Games</h4> : null }
+                        
                     </div>
                 </div>
                 {/* // Need to setup flag in render to indicate if there is any data in the related games section.
@@ -255,8 +252,14 @@ class GameDetailsIndexPage extends Component{
                 //This should remove the issue with failure on load. 
                 //Still need to research the location issue. */}
                 <div className="relatedCarousel" >
+                { showRelated ? <h3 className="appHeader">Related Games</h3> : null }
                     {this.props.details.related_game_apps ? <GameRenderer data={data} /> : null }
                 </div>
+                <button
+                    className="backBtn"
+                    onClick={this.props.history.goBack}>
+                    Go Back
+                </button>
             </div>
         );
     }

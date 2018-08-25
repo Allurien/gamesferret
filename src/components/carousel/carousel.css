@@ -2,12 +2,9 @@
     /* border: 4px solid #A8DADC; */
     border-radius: 18px;
     position: relative;
-    height: 500px;
-    width: 500px;
+    height: 50%;
     overflow: hidden;
     margin: auto;
-    max-height: 500px;
-    max-width: 100%;
 }
 
 .carousel-text {
@@ -19,6 +16,12 @@
   min-height: 70%;
   height: 70%;
   border-radius: 25px;
+  cursor: pointer;
+  border: 5px solid rgba(240, 200, 8, 0);
+}
+.carousel-img:hover {
+  border: 5px solid rgba(240, 200, 8, 0.5);
+  border-radius: 26px;
 }
 
 /* Next Image Classes */
@@ -137,41 +140,40 @@
 .ImgAndArrowBox{
   display: flex;
   justify-content: space-evenly;
-  max-height: 300px;
-  min-height: 300px;
+  width: 100%;
 }
 
-@media only screen and (min-width: 321px) and (max-width: 600px) {
-  .carousel-container {
+@media only screen and (min-width: 321px) and (max-width: 750px) {
+  /* .carousel-container {
     max-width: 100%;
-    height: 290px;
+    height: auto;
     width: 375px;
-  }
+  } */
   .indicators {
     width: 80%;
   }
 }
 @media only screen and (min-width: 750px) {
-  .carousel-container {
-    width: 400px;
+  /* .carousel-container { */
+    /* width: 400px;
     height: auto;
     margin: auto;
     max-height: 400px;
-  }
+  } */
   .indicators{
       width: 50%;
       margin-top: 2%;
   }
 }
 @media only screen and (max-width: 450px){
-  .carousel-container {
+  /* .carousel-container {
     width: 100%;
-  }
+  } */
 }
 @media only screen and (max-width: 320px) {
-  .carousel-container {
+  /* .carousel-container {
       max-height: 250px;
-  }
+  } */
   .indicators {
       width: 80%;
     }

@@ -28,7 +28,6 @@ form {
     padding-top: 73px;
     color: #1D3557;
     flex: 1;
-    align-items: center;
     display: flex;
     justify-content: center;
 }
@@ -41,7 +40,7 @@ form {
     max-width: 50%;
 }
 .notFound :any-link {
-    color: rgb(8, 103, 136);
+    color: #086788;
   }
 // Loader Component
 .loaderContainer {
@@ -70,6 +69,22 @@ form {
     text-align: center;
     margin: auto;
 }
+.accountBtn {
+    background-color: #00A7E1;
+    border-color: #086788;
+    margin-bottom: 1vh;
+}
+.backBtn {
+    border: 2px solid #00A7E1;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    order: 6;
+}
+.backBtn:hover {
+    text-shadow: 1px 1px 3px #1d3557;
+}
 
 //Footer
 .footerContainer{
@@ -77,24 +92,24 @@ form {
     background: #00A7E1;
     color: snow;
     flex-shrink: 0;
-  }
-  .footer {
+}
+.footer {
     display: flex;
     flex-direction: column;
     font-size: .7em;
-  }
-  .footer ul {
+}
+.footer ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
     padding: 0;
     margin: 10px 0 7px 0;
-  }
-  .footer p {
+}
+.footer p {
     display: flex;
     justify-content: center;
     margin: 0 0 8px;
-  }
+}
 
 //Animation
 .spinner {
@@ -121,7 +136,7 @@ form {
 
 @media only screen and (max-width: 360px) {
     .stars>div>span{
-        font-size: 18px;    
+        font-size: 18px;
     }
 }
 @media only screen and (max-width: 450px) {
@@ -129,39 +144,61 @@ form {
         max-width: 80%;
         height: auto;
     }
+    .modal-main {
+        margin-top: 8%;
+        width: 80%;
+        margin-left: 12%;
+    }
 }
 @media only screen and (min-width: 361px) {
     .stars>div>span{
-        font-size: 24px;   
+        font-size: 24px;
     }
 }
-@media only screen and (min-width: 750px) {
-    .stars>div>span{
-        font-size: 30px;
-    }
+@media only screen and (min-width: 790px) {
     .resItemImg {
         margin-bottom: 5%;
     }
     .resContainer {
         margin-top:2%;
     }
+    .aboutPageContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
     .devItem{
-        width: 50%;
-        margin-bottom: 1%;
+        width: 40%;
+        margin: 0 auto;
+        margin-bottom: 2%;
     }
     .resItem {
-        width: 21%;
+        width: 20%;
+        margin: 0 2%;
     }
     .detailContainer{
         width: 80%;
         margin: auto;
-    }
-    .modal-main {
-        margin-top: 8%;
-        width: 60%;
-        margin-left: 20%;
+        margin-bottom: 10vh;
     }
     .notFound img {
         max-width: 30%;
+    }
+    .gameBlock {
+        margin-bottom: 15%
+    }
+    .backBtn {
+        margin-top: 1vh;
+    }
+}
+@media only screen and (min-width: 790px) and (max-width: 909px) {
+    .stars>div>span{
+        font-size: 24px;
+    }
+    
+}
+@media only screen and (min-width: 910px) {
+    .stars>div>span{
+        font-size: 30px;
     }
 }

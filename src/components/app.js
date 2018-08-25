@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Header from './header-bar';
+import DesktopMenu from './desktopMenu';
 import Home from './home';
 import NotFound from './notfound';
 import Browse from './browse';
@@ -24,12 +25,20 @@ import '../assets/css/app.scss';
 import SignIn from "../components/signin/sign_in";
 import SignUp from "../components/signin/sign_up";
 import Favorites from "../components/favorites";
-
+import Media from 'react-media';
 
 const App = () => (
         <div className="appOuterDiv">
             <div>
-            <Header/>
+                <Media query="(max-width: 789px)">
+                    {matches =>
+                        matches ? (
+                            <Header/>
+                        ) : (
+                            <DesktopMenu/>
+                        )
+                    }
+                </Media>
             </div>
             <div className="mainBody">
                 <Switch>
@@ -59,8 +68,5 @@ const App = () => (
             </div>
             <Footer/>
         </div>
-
-
-        
 );
 export default App;
